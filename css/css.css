@@ -1,0 +1,202 @@
+/* ========================= 
+   Variables couleurs et layout
+========================= */
+:root {
+    --bg-html: #777;
+    --color-text: #111;
+    --color-text-dark: #222;
+    --color-text-darker: #333;
+    --bg-general: #EEE8AA;
+    --bg-important: #FEFEE2;
+    --border-image: #FFF;
+    --gap: 1.5em;
+    --border-radius: 12px;
+    --shadow: 2px 4px 12px rgba(0,0,0,0.15);
+    --transition: 0.3s;
+}
+
+/* =========================
+   Global
+========================= */
+html {
+    background-color: var(--bg-html);
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 1em;
+    color: var(--color-text);
+}
+
+/* =========================
+   Conteneur principal
+========================= */
+.container1 {
+    display: flex;
+    width: 100%;
+    gap: var(--gap);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* =========================
+   Colonnes
+========================= */
+#general {
+    background-color: var(--bg-general);
+    flex: 1 1 45%;
+    min-width: 280px;
+    max-width: 450px;
+    padding: 1.5em;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: auto;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+#general:hover {
+    transform: translateY(-3px);
+    box-shadow: 2px 8px 20px rgba(0,0,0,0.25);
+}
+
+#important {
+    background-color: var(--bg-important);
+    flex: 2 1 55%;
+    min-width: 300px;
+    padding: 1.5em;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: auto;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+#important:hover {
+    transform: translateY(-3px);
+    box-shadow: 2px 8px 20px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   Titres
+========================= */
+h1, h2, h3 {
+    text-align: center;
+    font-weight: 600;
+    margin: 0.5em 0;
+    transition: color var(--transition);
+}
+
+h1 { font-size: 3em; color: var(--color-text); }
+h2 { font-size: 2.5em; color: var(--color-text-dark); }
+h3 { font-size: 1.5em; color: var(--color-text-darker); }
+
+h1:hover { color: #444; }
+h2:hover { color: #555; }
+h3:hover { color: #666; }
+
+/* =========================
+   Paragraphes et listes
+========================= */
+p, li {
+    font-size: 1em;
+    margin: 0.5em 0 0.5em 1.5em;
+    line-height: 1.6;
+}
+
+li li { margin-left: 1.5em; }
+
+/* =========================
+   Images
+========================= */
+.image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+    transition: transform var(--transition);
+}
+
+.image img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--border-image);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+    text-align: center;
+    color: #FFF;
+    margin-top: 2em;
+}
+
+footer hr { display: none; }
+
+/* =========================
+   Alignement centré
+========================= */
+.centrer { text-align: center; }
+
+/* =========================
+   Images contact
+========================= */
+p img {
+    width: 1em;
+    vertical-align: middle;
+    margin-right: 0.3em;
+}
+
+/* =========================
+   Media Queries
+========================= */
+@media (max-width: 1200px) {
+    .container1 {
+        flex-direction: column;
+        align-items: center;
+    }
+    #general, #important {
+        flex: 1 1 90%;
+        max-width: 90%;
+        margin-bottom: 1.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.6em; }
+    h3 { font-size: 1.2em; }
+    p, li { font-size: 0.95em; margin-left: 1em; }
+    .image img { max-width: 140px; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.6em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1em; }
+    p, li { font-size: 0.9em; margin-left: 0.8em; }
+    .image img { max-width: 120px; }
+}
+/* =========================
+   Styles pour les liens
+========================= */
+a {
+    color: #1a73e8; /* bleu agréable */
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover {
+    color: #0c47b7; /* bleu plus foncé au survol */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
