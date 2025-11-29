@@ -163,11 +163,12 @@ p img {
 @media (max-width: 1200px) {
     .container1 {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch; /* pour que les colonnes s'étirent */
     }
     #general, #important {
-        flex: 1 1 90%;
-        max-width: 90%;
+        flex: 1 1 100%;
+        max-width: 100%;
+        min-width: 300px; /* limite pour éviter que la colonne soit trop petite */
         margin-bottom: 1.5em;
     }
 }
@@ -187,6 +188,7 @@ p img {
     p, li { font-size: 0.9em; margin-left: 0.8em; }
     .image img { max-width: 120px; }
 }
+
 /* =========================
    Styles pour les liens
 ========================= */
