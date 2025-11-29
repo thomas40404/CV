@@ -163,12 +163,12 @@ p img {
 @media (max-width: 1200px) {
     .container1 {
         flex-direction: column;
-        align-items: stretch; /* pour que les colonnes s'étirent */
+        align-items: stretch; 
     }
     #general, #important {
         flex: 1 1 100%;
         max-width: 100%;
-        min-width: 300px; /* limite pour éviter que la colonne soit trop petite */
+        min-width: 300px; 
         margin-bottom: 1.5em;
     }
 }
