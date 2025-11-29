@@ -20,3 +20,5 @@ function calculerAge() {
 
 // S'assure que ça s'exécute au chargement complet de la page
 window.addEventListener("load", calculerAge);
+
+
